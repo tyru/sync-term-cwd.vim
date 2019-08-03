@@ -20,13 +20,22 @@ NEW BSD LICENSE {{{
 ==============================================================================
 CONTENTS								*synctermcwd-contents*
 
-Interface							|synctermcwd-interface|
+Setup							|synctermcwd-setup|
+Interface						|synctermcwd-interface|
   Variables						|synctermcwd-variables|
   Functions						|synctermcwd-functions|
 TODO & Bugs						|synctermcwd-todo-and-bugs|
 Changelog						|synctermcwd-changelog|
 
 
+==============================================================================
+SET UP								*synctermcwd-setup* {{{
+
+Add below to your `.bashrc`
+>
+	source (repo)/macros/synctermcwd.sh`
+<
+}}}
 ==============================================================================
 INTERFACE								*synctermcwd-interface* {{{
 ------------------------------------------------------------------------------
