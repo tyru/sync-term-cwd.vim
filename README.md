@@ -17,5 +17,8 @@ source (repo)/macros/synctermcwd.sh`
 Add below to your `.vimrc` if you want to set current working directories only in windows of current tabpage.
 
 ```vim
-let g:synctermcwd_cd_command = 'windo lcd'
+let g:synctermcwd_cd_command = 'SyncTermCwdTabLcd'
 ```
+
+`:SyncTermCwdTabLcd {path}` is almost same as `:windo lcd {path}`, but
+`:SyncTermCwdTabLcd` does not change the current window.
