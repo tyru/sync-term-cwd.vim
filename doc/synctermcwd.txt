@@ -47,9 +47,9 @@ g:synctermcwd_cd_command
 	This plugin executes "{g:synctermcwd_cd_command} {path}"
 	when `cd` command is executed on the shell in `:terminal`.
 	Below example sets Vim's current working directory
-	in all windows in current tabpage.
+	in current tabpage.
 >
-	let g:synctermcwd_cd_command = 'windo lcd'
+	let g:synctermcwd_cd_command = 'tcd'
 <
 }}}
 ------------------------------------------------------------------------------

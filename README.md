@@ -12,10 +12,10 @@ Add below to your `.bashrc` / `.zshrc`.
 source (repo)/macros/synctermcwd.sh`
 ```
 
-# Tips
+# Change tabpage's current working directory
 
-Add below to your `.vimrc` if you want to set current working directories only in windows of current tabpage.
+Add below to your `.vimrc` if you want to set current working directory of current tabpage.
 
 ```vim
-let g:synctermcwd_cd_command = 'windo lcd'
+let g:synctermcwd_cd_command = 'tcd'
 ```
