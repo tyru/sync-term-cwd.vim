@@ -31,7 +31,7 @@ Changelog						|synctermcwd-changelog|
 ==============================================================================
 SET UP								*synctermcwd-setup* {{{
 
-Add below to your `.bashrc`
+Add below to your `.bashrc` or `.zshrc`
 >
 	source (repo)/macros/synctermcwd.sh`
 <

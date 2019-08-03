@@ -6,7 +6,7 @@ this plugin automatically sets the current working directory in Vim too.
 
 # Setup
 
-Add below to your `.bashrc`.
+Add below to your `.bashrc` / `.zshrc`.
 
 ```
 source (repo)/macros/synctermcwd.sh`
