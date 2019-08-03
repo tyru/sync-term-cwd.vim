@@ -52,9 +52,7 @@ g:synctermcwd_cd_command
 >
 		let g:synctermcwd_cd_command = 'SyncTermCwdTabLcd'
 <
-	This is same as: >
-		let g:synctermcwd_cd_command = 'windo lcd'
-<	but |:SyncTermCwdTabLcd| does not change current window.
+	See |:SyncTermCwdTabLcd| for the details.
 
 }}}
 ------------------------------------------------------------------------------
@@ -62,8 +60,17 @@ COMMANDS								*synctermcwd-commands* {{{
 
 						*:SyncTermCwdTabLcd*
 :SyncTermCwdTabLcd {path}
-	Almost same as `:windo lcd {path}`, but |:SyncTermCwdTabLcd| does not
-	change the current window.
+	Almost same as `:windo lcd {path}`, but:
+	* It does not change the current window
+	* It does not execute `:lcd {path}` if `:SyncTermCwdDisableLcd` is
+	  executed on the buffer
+
+						*:SyncTermCwdDisableLcd* *:SyncTermCwdEnableLcd*
+:SyncTermCwdDisableLcd
+:SyncTermCwdEnableLcd
+	If |:SyncTermCwdDisableLcd| is executed on a buffer,
+	`:lcd {path}` is not executed on the buffer.
+	|:SyncTermCwdEnableLcd| resets disabled buffer.
 
 }}}
 ------------------------------------------------------------------------------
