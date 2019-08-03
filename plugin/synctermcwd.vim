@@ -13,20 +13,4 @@ function! Tapi_SyncTermCwd(_, cwd) abort
   execute cd a:cwd
 endfunction
 
-command! -nargs=? -complete=dir SyncTermCwdTabLcd
-\   call s:tablocal_lcd(<f-args>)
-
-function! s:tablocal_lcd(...) abort
-  if !a:0
-    lcd
-    return
-  endif
-  let winid = win_getid()
-  try
-    execute 'windo lcd' a:1
-  finally
-    call win_gotoid(winid)
-  endtry
-endfunction
-
 let &cpo = s:save_cpo

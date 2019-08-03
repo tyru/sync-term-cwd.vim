@@ -23,7 +23,6 @@ CONTENTS								*synctermcwd-contents*
 Setup							|synctermcwd-setup|
 Interface						|synctermcwd-interface|
   Variables						|synctermcwd-variables|
-  Commands						|synctermcwd-commands|
   Functions						|synctermcwd-functions|
 TODO & Bugs						|synctermcwd-todo-and-bugs|
 Changelog						|synctermcwd-changelog|
@@ -50,21 +49,8 @@ g:synctermcwd_cd_command
 	Below example sets Vim's current working directory
 	in all windows in current tabpage.
 >
-		let g:synctermcwd_cd_command = 'SyncTermCwdTabLcd'
+	let g:synctermcwd_cd_command = 'windo lcd'
 <
-	This is same as: >
-		let g:synctermcwd_cd_command = 'windo lcd'
-<	but |:SyncTermCwdTabLcd| does not change current window.
-
-}}}
-------------------------------------------------------------------------------
-COMMANDS								*synctermcwd-commands* {{{
-
-						*:SyncTermCwdTabLcd*
-:SyncTermCwdTabLcd {path}
-	Almost same as `:windo lcd {path}`, but |:SyncTermCwdTabLcd| does not
-	change the current window.
-
 }}}
 ------------------------------------------------------------------------------
 FUNCTIONS								*synctermcwd-functions* {{{
