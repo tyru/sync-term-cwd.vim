@@ -9,7 +9,7 @@ this plugin automatically sets the current working directory in Vim too.
 Add below to your `.bashrc` / `.zshrc`.
 
 ```
-source (repo)/macros/synctermcwd.sh`
+source (this repository)/macros/synctermcwd.sh
 ```
 
 # Change tabpage's current working directory
