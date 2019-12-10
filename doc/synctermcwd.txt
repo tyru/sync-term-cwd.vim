@@ -77,4 +77,4 @@ CHANGELOG								*synctermcwd-changelog* {{{
 
 }}}
 ==============================================================================
-vim:tw=78:fo=tcq2mM:ts=4:ft=help:norl:noet:fdm=marker:fen
+vim:tw=78:fo=tcq2mM:sw=0:ts=4:sts=-1:ft=help:norl:noet:fdm=marker:fen
