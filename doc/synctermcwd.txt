@@ -24,6 +24,7 @@ Setup							|synctermcwd-setup|
 Interface						|synctermcwd-interface|
   Variables						|synctermcwd-variables|
   Functions						|synctermcwd-functions|
+  Ex commands					|synctermcwd-excmds|
 TODO & Bugs						|synctermcwd-todo-and-bugs|
 Changelog						|synctermcwd-changelog|
 
@@ -60,6 +61,26 @@ Tapi_SyncTermCwd({bufnr}, {cwd})
 	Sets Vim's current working directory to {cwd}.
 	{bufnr} is unused.
 
+}}}
+------------------------------------------------------------------------------
+EX COMMANDS					*synctermcwd-excmds* *synctermcwd-ex-commands* {{{
+
+SyncTermCwdConditionalCd {cwd}					*SyncTermCwdConditionalCd*
+	Sets Vim's current working directory to {cwd}.
+	You can specify this to |g:synctermcwd_cd_command|. >
+
+	let g:synctermcwd_cd_command = 'SyncTermCwdConditionalCd'
+<
+	This command behaves like `:lcd` or `:tcd` conditionally as the following:
+
+	if {2 or more than terminal windows in this tab-page}:
+		:lcd
+	else if {window has set a local directory}:
+		:lcd
+	else if {tab-page has set a local directory}:
+		:tcd
+	else:
+		:tcd
 }}}
 
 }}}
