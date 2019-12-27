@@ -17,7 +17,9 @@ command! -nargs=1 -complete=dir SyncTermCwdConditionalCd call s:conditional_cd(<
 
 function! s:conditional_cd(cwd) abort
   let termwins = len(filter(tabpagebuflist(), {-> getbufvar(v:val, '&buftype') ==# 'terminal'}))
-  if termwins > 1              " 2 or more than terminal windows in this tab-page
+  if exists(':tcd') !=# 2      " :tcd is not available
+    let cd = 'lcd'
+  elseif termwins > 1          " 2 or more than terminal windows in this tab-page
     let cd = 'lcd'
   elseif haslocaldir() ==# 1   " window has set a local directory
     let cd = 'lcd'

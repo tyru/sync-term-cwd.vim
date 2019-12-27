@@ -82,9 +82,13 @@ SyncTermCwdConditionalCd {cwd}					*SyncTermCwdConditionalCd*
 
 	let g:synctermcwd_cd_command = 'SyncTermCwdConditionalCd'
 <
-	This command behaves like `:lcd` or `:tcd` conditionally as the following:
+	This command behaves like |:lcd| or |:tcd| conditionally as the following:
+	If your Vim is older than Vim 8.1.1218 (|:tcd| command is not provided),
+	this command always works like |:lcd|.
 
-	if {2 or more than terminal windows in this tab-page}:
+	if {:tcd command is not available}:
+		:lcd
+	elseif {2 or more than terminal windows in this tab-page}:
 		:lcd
 	else if {window has set a local directory}:
 		:lcd
