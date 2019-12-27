@@ -12,7 +12,7 @@ Add below to your `.bashrc` / `.zshrc`.
 source (this repository)/macros/synctermcwd.sh
 ```
 
-Recommended setting: Put below setting to your `.vimrc`.  This sets Vim current
+**Recommended setting:** Put below setting to your `.vimrc`.  This sets Vim current
 directory local to tab-page (1 terminal window) or window (2 or more terminal
 windows) conditionally.
 
@@ -20,10 +20,15 @@ windows) conditionally.
 let g:synctermcwd_cd_command = 'SyncTermCwdConditionalCd'
 ```
 
-# Change tabpage's current working directory
-
-Add below to your `.vimrc` if you want to set current working directory of current tabpage.
+Or always change tab-page's current directory:
+(`:tcd` command is added by [Vim 8.1.1218](https://github.com/vim/vim/commit/00aa069db8132851a91cfc5ca7f58ef945c75c73))
 
 ```vim
 let g:synctermcwd_cd_command = 'tcd'
 ```
+
+Default is:
+
+```vim
+let g:synctermcwd_cd_command = 'cd'
+``
