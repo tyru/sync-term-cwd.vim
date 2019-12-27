@@ -1,6 +1,6 @@
-_synctermcwd_ps1() {
-  if [ "$VIM_TERMINAL" ]; then
+if [ "$VIM_TERMINAL" ]; then
+  _synctermcwd_ps1() {
     printf '\e]51;["call","Tapi_SyncTermCwd","%s"]\x07' "$PWD"
-  fi
-}
-PS1="\$(_synctermcwd_ps1)$PS1"
+  }
+  PS1="\$(_synctermcwd_ps1)$PS1"
+fi
