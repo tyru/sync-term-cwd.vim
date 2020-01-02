@@ -36,12 +36,6 @@ Add below to your `.bashrc` or `.zshrc`
 >
 	source (repo)/macros/synctermcwd.sh`
 <
-Recommended setting (see |SyncTermCwdConditionalCd|):
-This sets Vim current directory local to tab-page (1 terminal window) or
-window (2 or more terminal windows) conditionally. >
-
-	let g:synctermcwd_cd_command = 'SyncTermCwdConditionalCd'
-
 }}}
 ==============================================================================
 INTERFACE								*synctermcwd-interface* {{{
@@ -50,18 +44,18 @@ VARIABLES								*synctermcwd-variables* {{{
 
 						*g:synctermcwd_cd_command*
 g:synctermcwd_cd_command
-									(Default: "cd")
+							(Default: "SyncTermCwdConditionalCd")
 	This plugin executes "{g:synctermcwd_cd_command} {path}"
 	when shell's working directory is changed in `:terminal`.
 	Below example sets Vim's current working directory
 	in current tabpage.
 >
-	let g:synctermcwd_cd_command = 'tcd'
+		let g:synctermcwd_cd_command = 'tcd'
 <
 	Or you can specify your defined command: >
 
-	command! -nargs=1 -complete=dir MyCd echo 'changing directory to' <q-args> | execute 'tcd' <q-args>
-	let g:synctermcwd_cd_command = 'MyCd'
+		command! -nargs=1 -complete=dir MyCd echo 'changing directory to' <q-args> | execute 'tcd' <q-args>
+		let g:synctermcwd_cd_command = 'MyCd'
 <
 }}}
 ------------------------------------------------------------------------------
@@ -78,9 +72,12 @@ EX COMMANDS					*synctermcwd-excmds* *synctermcwd-ex-commands* {{{
 
 SyncTermCwdConditionalCd {cwd}					*SyncTermCwdConditionalCd*
 	Sets Vim's current working directory to {cwd}.
+	This sets Vim current directory local to tab-page (1 terminal window) or
+	window (2 or more terminal windows) conditionally.
+
 	You can specify this to |g:synctermcwd_cd_command|. >
 
-	let g:synctermcwd_cd_command = 'SyncTermCwdConditionalCd'
+		let g:synctermcwd_cd_command = 'SyncTermCwdConditionalCd'
 <
 	This command behaves like |:lcd| or |:tcd| conditionally as the following:
 	If your Vim is older than Vim 8.1.1218 (|:tcd| command is not provided),

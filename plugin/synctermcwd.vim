@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 function! Tapi_SyncTermCwd(_, cwd) abort
-  let cd = get(g:, 'synctermcwd_cd_command', 'cd')
+  let cd = get(g:, 'synctermcwd_cd_command', 'SyncTermCwdConditionalCd')
   execute cd a:cwd
 endfunction
 
@@ -25,7 +25,7 @@ function! s:conditional_cd(cwd) abort
     let cd = 'lcd'
   elseif haslocaldir() ==# 2   " tab-page has set a local directory
     let cd = 'tcd'
-  else                         " default :cd command
+  else                         " default cd command
     let cd = 'tcd'
   endif
   execute cd a:cwd
