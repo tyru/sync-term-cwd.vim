@@ -10,7 +10,13 @@ set cpo&vim
 
 function! Tapi_SyncTermCwd(_, cwd) abort
   let cd = get(g:, 'synctermcwd_cd_command', 'SyncTermCwdConditionalCd')
-  execute cd a:cwd
+  if isdirectory(a:cwd)
+    execute cd a:cwd
+  else
+    echohl ErrorMsg
+    echomsg 'sync-term-cwd: No such directory:' a:cwd
+    echohl None
+  endif
 endfunction
 
 command! -nargs=1 -complete=dir SyncTermCwdConditionalCd call s:conditional_cd(<q-args>)
