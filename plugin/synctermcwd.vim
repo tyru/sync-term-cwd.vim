@@ -2,7 +2,7 @@
 scriptencoding utf-8
 
 if exists('g:loaded_synctermcwd') && g:loaded_synctermcwd
-    finish
+  finish
 endif
 let g:loaded_synctermcwd = 1
 let s:save_cpo = &cpo
