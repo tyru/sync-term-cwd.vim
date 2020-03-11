@@ -8,6 +8,8 @@ let g:loaded_synctermcwd = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+let $SYNCTERMCWD_LOADED = 'true'
+
 function! Tapi_SyncTermCwd(_, cwd) abort
   let cd = get(g:, 'synctermcwd_cd_command', 'SyncTermCwdConditionalCd')
   if isdirectory(a:cwd)
