@@ -13,7 +13,7 @@ let $SYNCTERMCWD_LOADED = 'true'
 function! Tapi_SyncTermCwd(_, cwd) abort
   let cd = get(g:, 'synctermcwd_cd_command', 'SyncTermCwdConditionalCd')
   if isdirectory(a:cwd)
-    execute cd a:cwd
+    execute cd fnameescape(a:cwd)
   else
     echohl ErrorMsg
     echomsg 'sync-term-cwd: No such directory:' a:cwd
